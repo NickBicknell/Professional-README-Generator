@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
-// TODO: Create an array of questions for user input
+// questions to take user input to generate the markdown file
 const questions = [
     {
         type: "input",
@@ -28,7 +28,7 @@ const questions = [
     {
         type: "list",
         message: "Choose what license you have for your application:",
-        choices: ["MIT", "GNU AGPLv3", "GNU GPLv3", "GNU LGPLv3", "Mozilla Public 2.0", "Apache 2.0", "Boost Software 1.0", "N/A"],
+        choices: ["MIT", "GNU_AGPLv3", "GNU_GPLv3", "GNU_LGPLv3", "Mozilla_Public_2.0", "Apache_2.0", "Boost_Software_1.0", "None"],
         name: "license",
     },
     {
@@ -53,7 +53,7 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// Function that writes the readme file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) {
@@ -64,13 +64,13 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// function that initializes the app, uses the writeToFile function to create readme
 function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
             console.log("Generating....");
-            writeToFile('./tests/README.md', generateMarkdown({ ...answers }));
+            writeToFile('./output/README.md', generateMarkdown({ ...answers }));
         })
 }
 
