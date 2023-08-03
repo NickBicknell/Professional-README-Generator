@@ -24,7 +24,7 @@ I created the README generator application to make an efficent and effective way
 
 In a terminal like Git Bash, navigate to the repo the index.js file is located in. Then run the command `node index.js`. The user will be prompted with questions about their project to be used in the README. After answering all questions, the README.md file will be dynamically generated for the user in the output directory.
 
-## Tutorial Video
+### Tutorial Video
 
 [Tutorial Video](https://watch.screencastify.com/v/zoBJtarm79UXtVNWwUir)
 
